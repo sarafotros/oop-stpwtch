@@ -21,7 +21,7 @@ const cricketKata = (input) => {
       let keeperId = inPitchId[0];
       if (inputArr[i] !== '.') {
         batmen[keeperId].score += parseInt(inputArr[i]);
-        total += inputArr[i];
+        total += parseInt(inputArr[i]);
       }
       if (inputArr[i] !== '.' && parseInt(inputArr[i]) % 2 !== 0) {
         inPitchId.reverse();
@@ -31,19 +31,13 @@ const cricketKata = (input) => {
       inPitchId.reverse();
     }
   }
+  return { batmen, total };
 };
-
-//   let sco = '
-//   ..1.2.
-//    3.1...
-//     3.1..4
-//     .4.6.6
-//      .66.1..
-//        ...1..
-//          ...W..
-//            ...2..
-//              .11.11
-//                ..11'
+let sco = '..1.2.3.1...3.1..4.4.6.6.66.1.....1.....W.....2...11.11..11';
+let inString =
+  '.......111....3.4..6...1..11....2....3...W...11...1..2...33...44...W..W..1..2..1.22....1..1......1....11...111.....1.111..222.333...W...211..22.11....1...1...1...1...1..1..3...4....2...1....3...1....646421.3.222..111...333...444......1111...22..333.444............1...1...1.....11.22.WWW11.....1....11....1....1.W...W..1666..W';
+// console.log(cricketKata(sco));
+console.log(cricketKata(inString));
 
 //    p1:26
 //     // p2: 24
